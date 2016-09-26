@@ -1,0 +1,133 @@
+body {
+  background-color: #000;
+  background-image: url(image/background-repeat.jpg);
+  color: #fff;
+  font-family: Arial;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+article {
+  margin: 20px;
+  border-radius: 5px;
+  min-height: 100px;
+  background-color: rgba(166,166,166, 0.4);
+  padding: 20px;
+}
+
+pre {
+  font-size: 1.3em;
+}
+
+/*Styles for Tabs on CSS 3*/
+
+.tab-wrapper {
+  margin-top: 20px;
+}
+
+.tab-wrapper > input {
+  display: none;
+}
+
+.tab-wrapper > label {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tabs-content {
+  clear: both;
+  max-height: 406px;
+  overflow: auto;
+}
+
+.tabs-content > div {
+  background-color: #222222;
+  color: #f0eabe;
+  padding: 10px;
+  display: none;
+}
+
+#tab1:checked ~ .tabs-content > div:nth-child(1),
+#tab2:checked ~ .tabs-content > div:nth-child(2),
+#tab3:checked ~ .tabs-content > div:nth-child(3) {display: block;}
+
+#tabs-code-html:checked ~ .tabs-content > div:nth-child(1),
+#tabs-code-css:checked ~ .tabs-content > div:nth-child(2) {display: block;}
+
+.tab-wrapper input:checked + label {
+  color: #fff;
+  background-color: #000;
+}
+
+/*Accordeaon styles*/
+
+.accordeon-wrapper ul,
+.accordeon-wrapper ul li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+}
+
+.accordeon {
+  width: 150px;
+}
+
+/*Function*/
+
+.accordeon li > .sub-menu {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .4s ease;
+  transition: height .4s ease;
+}
+
+.accordeon li:target > .sub-menu {height: 98px;}
+
+.accordeon li > a {
+  display: block;
+  width: 150px;
+  height: 32px;
+  text-align: center;
+  background-color: #586895;
+  color: #fff;
+  font-weight: bold;
+  line-height: 32px;
+  text-decoration: none;
+}
+
+.accordeon li:hover > a, 
+.accordeon li:target > a {
+  background-color: #3C4662;
+}
+
+/*Sub-menu styles*/
+
+.sub-menu li a {
+  background-color: #e5e5e5;
+  color: #3C4662;
+  border-bottom: 2px solid #596891;
+}
+
+.sub-menu li:last-child a {
+  border: none;
+}
+
+.sub-menu li:hover a {
+  background-color: #bfbfbf;
+  color: #1f2433;
+}
+
+#accordeon-code-html:checked ~ .tabs-content > div:nth-child(1),
+#accordeon-code-css:checked ~ .tabs-content > div:nth-child(2) {display: block;}

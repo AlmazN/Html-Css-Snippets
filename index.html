@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <article>
+    <h2>Tabs on CSS3</h2>
+    <div class="tab-wrapper">
+      <input type="radio" name="tab" id="tab1" checked>
+      <label for="tab1">table1</label>
+      <input type="radio" name="tab" id="tab2">
+      <label for="tab2">table2</label>
+      <input type="radio" name="tab" id="tab3">
+      <label for="tab3">table3</label>
+      
+      <div class="tabs-content" id="tabs-content">
+        <div>
+          <h3>Tab1 Content</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis porro est optio! Sit cumque aut aperiam accusamus quas in eligendi aliquid perferendis atque voluptatibus.</p>
+        </div>
+        <div>
+          <h3>Tab2 Content</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error optio architecto eum sit nihil quas, a nulla vero repellendus ipsum quia quidem, nostrum corporis.</p>
+        </div>
+        <div>
+          <h3>Tab3 Content</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus tempore vero ab molestiae, provident expedita dolorum earum ratione? Vero, ratione nihil nisi magnam eum.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tab-wrapper">
+      <input type="radio" name="tabs-code" id="tabs-code-html" checked>
+      <label for="tabs-code-html">HTML</label>
+      <input type="radio" name="tabs-code" id="tabs-code-css">
+      <label for="tabs-code-css">CSS</label>
+      
+      <div class="tabs-content" id="tabs-content">
+        <div>
+            <pre>
+&ltdiv class="tab-wrapper"&gt
+&ltinput type="radio" name="tab" id="tab1" checked&gt
+&ltlabel for="tab1"&gttable1&lt/label&gt
+&ltinput type="radio" name="tab" id="tab2"&gt
+&ltlabel for="tab2"&gttable2&lt/label&gt
+&ltinput type="radio" name="tab" id="tab3"&gt
+&ltlabel for="tab3"&gttable3&lt/label&gt
+
+&ltdiv class="tabs-content" id="tabs-content"&gt
+  &ltdiv&gt
+    &lth3&gtTab1 Content&lt/h3&gt
+    &ltp&gtLorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis porro est optio! Sit cumque aut aperiam accusamus quas in eligendi aliquid perferendis atque voluptatibus.&lt/p&gt
+  &lt/div&gt
+  &ltdiv&gt
+    &lth3&gtTab2 Content&lt/h3&gt
+    &ltp&gtLorem ipsum dolor sit amet, consectetur adipisicing elit. Error optio architecto eum sit nihil quas, a nulla vero repellendus ipsum quia quidem, nostrum corporis.&lt/p&gt
+  &lt/div&gt
+  &ltdiv&gt
+    &lth3&gtTab3 Content&lt/h3&gt
+    &ltp&gtLorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus tempore vero ab molestiae, provident expedita dolorum earum ratione? Vero, ratione nihil nisi magnam eum.&lt/p&gt
+  &lt/div&gt
+&lt/div&gt
+&lt/div&gt
+          </pre>
+        </div>
+        <div>
+          <pre>
+.tab-wrapper > input {
+  display: none;
+}
+
+.tab-wrapper > label {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 5px 5px 0 0;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tabs-content {
+  clear: both;
+}
+
+.tabs-content > div {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  display: none;
+}
+
+#tab1:checked ~ .tabs-content > div:nth-child(1),
+#tab2:checked ~ .tabs-content > div:nth-child(2),
+#tab3:checked ~ .tabs-content > div:nth-child(3) {display: block;}
+
+.tab-wrapper input:checked + label {
+  color: #fff;
+  background-color: #000;
+}
+          </pre>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article>
+    <h2>Accordeon menu on CSS3</h2>
+    <div class="accordeon-wrapper" id="accordeon-wrapper">
+      <ul class="accordeon">
+        <li class="main-li-1" id="main-li-1">
+          <a href="#main-li-1">First level 1</a>
+          <ul class="sub-menu">
+            <li><a href="#main-li-1">sub-menu-li</a></li>
+            <li><a href="#main-li-1">sub-menu-li</a></li>
+            <li><a href="#main-li-1">sub-menu-li</a></li>
+          </ul>
+        </li>
+        <li class="main-li-2" id="main-li-2">
+          <a href="#main-li-2">First level 2</a>
+          <ul class="sub-menu">
+            <li><a href="#main-li-2">sub-menu-li</a></li>
+            <li><a href="#main-li-2">sub-menu-li</a></li>
+            <li><a href="#main-li-2">sub-menu-li</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="tab-wrapper">
+      <input type="radio" name="accordeon-code" id="accordeon-code-html" checked>
+      <label for="accordeon-code-html">HTML</label>
+      <input type="radio" name="accordeon-code" id="accordeon-code-css">
+      <label for="accordeon-code-css">CSS</label>
+      
+      <div class="tabs-content" id="tabs-content">
+      <div>
+        <pre>
+&ltdiv class="accordeon-wrapper" id="accordeon-wrapper"&gt
+  &ltul class="accordeon"&gt
+    &ltli class="main-li-1" id="main-li-1"&gt
+      &lta href="#main-li-1"&gtFirst level 1&lt/a&gt
+      &ltul class="sub-menu"&gt
+        &ltli&gt&lta href="#main-li-1"&gtsub-menu-li&lt/a&gt&lt/li&gt
+        &ltli&gt&lta href="#main-li-1"&gtsub-menu-li&lt/a&gt&lt/li&gt
+        &ltli&gt&lta href="#main-li-1"&gtsub-menu-li&lt/a&gt&lt/li&gt
+      &lt/ul&gt
+    &lt/li&gt
+    &ltli class="main-li-2" id="main-li-2"&gt
+      &lta href="#main-li-2"&gtFirst level 2&lt/a&gt
+      &ltul class="sub-menu"&gt
+        &ltli&gt&lta href="#main-li-2"&gtsub-menu-li&lt/a&gt&lt/li&gt
+        &ltli&gt&lta href="#main-li-2"&gtsub-menu-li&lt/a&gt&lt/li&gt
+        &ltli&gt&lta href="#main-li-2"&gtsub-menu-li&lt/a&gt&lt/li&gt
+      &lt/ul&gt
+    &lt/li&gt
+  &lt/ul&gt
+&lt/div&gt
+        </pre>
+      </div>
+      <div>
+        <pre>
+.accordeon-wrapper ul,
+.accordeon-wrapper ul li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+}
+
+.accordeon {
+  width: 150px;
+}
+
+/*Function*/
+
+.accordeon li > .sub-menu {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .4s ease;
+  transition: height .4s ease;
+}
+
+.accordeon li:target > .sub-menu {height: 98px;}
+
+.accordeon li > a {
+  display: block;
+  width: 150px;
+  height: 32px;
+  text-align: center;
+  background-color: #586895;
+  color: #fff;
+  font-weight: bold;
+  line-height: 32px;
+  text-decoration: none;
+}
+
+.accordeon li:hover > a, 
+.accordeon li:target > a {
+  background-color: #3C4662;
+}
+
+/*Sub-menu styles*/
+
+.sub-menu li a {
+  background-color: #e5e5e5;
+  color: #3C4662;
+  border-bottom: 2px solid #596891;
+}
+
+.sub-menu li:last-child a {
+  border: none;
+}
+
+.sub-menu li:hover a {
+  background-color: #bfbfbf;
+  color: #1f2433;
+}
+        </pre>
+      </div>
+      </div>
+    </div>
+  </article>
+</body>
+</html>
